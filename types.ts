@@ -1,0 +1,9 @@
+export const VOICE_VERSION = 4;
+export const CHANNELS = 2;
+export const SAMPLE_RATE = 48000;
+export const MAX_PACKET_SIZE = 28 + 1276 * 3;
+export const FRAME_DURATION = 20;
+export const FRAME_SIZE = SAMPLE_RATE * FRAME_DURATION / 1000;
+export const MAX_SEQ = 2 ** 16;
+export const MAX_TIMESTAMP = 2 ** 32;
+export const ENCRYPTION_MODE = "xsalsa20_poly1305"; // default

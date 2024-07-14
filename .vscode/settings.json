@@ -3,5 +3,9 @@
   "editor.formatOnSave": true,
   "deno.lint": true,
   "deno.cacheOnSave": true,
-  "deno.config": "./deno.jsonc"
+  "deno.config": "./deno.jsonc",
+  "deno.suggest.imports.autoDiscover": false,
+  "[json,jsonc,typescript,javascript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  }
 }

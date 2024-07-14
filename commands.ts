@@ -5,6 +5,7 @@ import {
 } from "@discordeno/bot";
 import { joinCommand } from "./commands/join.ts";
 import { pingCommand } from "./commands/ping.ts";
+import { leaveCommand } from "./commands/leave.ts";
 
 export type Command = {
     execute: (bot: Bot, interaction: Interaction) => Promise<unknown>;
@@ -12,6 +13,7 @@ export type Command = {
 const commands: Command[] = [
     joinCommand,
     pingCommand,
+    leaveCommand,
 ];
 export const installCommands = async (bot: Bot, guildId: string) => {
     for (const command of commands) {
@@ -21,7 +23,6 @@ export const installCommands = async (bot: Bot, guildId: string) => {
         }, guildId);
     }
     bot.events.interactionCreate = async (interaction) => {
-        console.log(interaction.guildId);
         console.log("interaction name: ", interaction.data?.name);
         const command = commands.find((x) => x.name === interaction.data?.name);
         if (command === undefined) {

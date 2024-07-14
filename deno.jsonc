@@ -4,7 +4,6 @@
     "start": "deno run -A main.ts"
   },
   "imports": {
-    "@discordeno/bot": "npm:@discordeno/bot@latest",
     "@std/dotenv": "jsr:@std/dotenv@^0.224.2"
   }
 }
