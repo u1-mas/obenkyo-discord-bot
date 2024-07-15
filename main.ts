@@ -20,10 +20,6 @@ const bot = createBot({
   defaultDesiredPropertiesValue: true,
 });
 
-bot.transformers.desiredProperties.voiceState.userId = true;
-bot.transformers.desiredProperties.voiceState.channelId = true;
-bot.transformers.desiredProperties.voiceState.guildId = true;
-
 bot.events.messageCreate = (msg) => {
   console.log(msg.content);
 };
