@@ -1,5 +1,6 @@
 import { InteractionResponseTypes } from "@discordeno/bot";
 import { Command } from "../commands.ts";
+import { connectionManager } from "../libs/ConnectionManager.ts";
 
 export const leaveCommand: Command = {
   name: "leave",
@@ -11,6 +12,7 @@ export const leaveCommand: Command = {
       throw new Error();
     }
     await gateway.leaveVoiceChannel(guildId);
+    connectionManager.delete(guildId);
     await bot.helpers.sendInteractionResponse(
       interaction.id,
       interaction.token,
